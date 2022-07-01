@@ -3,9 +3,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+h1{
+    font-size: 100px;
+color: aquamarine;
+}
 
 :root {
-    --ancho-juego: 400px;
+    --ancho-juego: 600px;
     --altura-juego: 600px;
     --ancho-cuadro: calc(var(--ancho-juego) / 2);
     --altura-cuadro: calc(var(--altura-juego) / 2);
@@ -17,13 +21,12 @@ body {
     height: 100vh;
     display: grid;
     place-items: center;
-    background-image: url(/AVJE7170.MP4);
+    
 }
 
 .juego {
-    position: relative;;
-    display: flex;
-    flex-wrap: wrap;
+    position: relative;
+    display: grid;
     width: var(--ancho-juego);
     height: var(--altura-juego);
     border: 1px solid white;
@@ -31,14 +34,14 @@ body {
 }
 
 .cuadro {
-    background: gray;
+    /* background: red; */
     /* width: calc(var(--ancho-cuadro) - 4px); */
     /* height: calc(var(--altura-cuadro) - 4px); */
-    border: 2px solid black;
+    border: 2px solid white;
      border-radius: 5% ;
-     
 }
 
 .active {
-    background: green; 
+    background: white;
+    border: 1px solid red; 
 }

@@ -1,41 +1,39 @@
-const JUEGO_DIV = document.querySelector('.juego');
-const JUEGO_ANCHO = 400;
-const JUEGO_ALTURA = 600;
+const JUEGO_DIV = document.querySelector(".juego");
 let nivel = 1;
-let numeroDeCuadro = 2;
-
-function obtenerSize(nivelActual) {
-    let sizes = {
-        ancho: 0,
-        altura: 0
-    }
-    if(nivelActual === 1){
-        sizes.ancho = 400;
-        sizes.altura = JUEGO_ALTURA / 2;
-    }
-
-    return sizes;
-}
 
 function createJuego() {
-    addCuadros()
+  addCuadros();
 }
 
-function addCuadros(){
-    const SIZE = obtenerSize(nivel);
-    const numeroAleatorio = Math.floor(Math.random() * numeroDeCuadro)
-    
-    for (let index = 0; index < numeroDeCuadro; index++) {
-       let cuadro = document.createElement('div');
-       cuadro.classList.add('cuadro');
-        cuadro.style.width = SIZE.ancho + 'px';
-        cuadro.style.height = SIZE.altura + 'px';
-        console.log({numeroAleatorio})
-        if(index === numeroAleatorio) cuadro.classList.add('active')
-       JUEGO_DIV.appendChild(cuadro)
-    }
+function addCuadros() {
+    const numeroDeCuadro = nivel == 1 ? 2 : nivel * nivel;
+  const numeroAleatorio = Math.floor(Math.random() * numeroDeCuadro);
+  const randomColor = obtenerColorRandom();
+
+  JUEGO_DIV.style.cssText = `grid-template-rows: repeat(${nivel}, 1fr)`;
+  JUEGO_DIV.style.cssText = `grid-template-columns: repeat(${nivel}, 1fr)`;
+
+  for (let index = 0; index < numeroDeCuadro; index++) {
+    let cuadro = document.createElement("div");
+    cuadro.addEventListener("click", onCuadroClick);
+    cuadro.classList.add("cuadro");
+    cuadro.style.backgroundColor = `rgb(${randomColor})`;
+
+    if (index === numeroAleatorio) cuadro.style.backgroundColor = `rgba(${randomColor},0.80)`;
+    JUEGO_DIV.appendChild(cuadro);
+  }
 }
 
+function onCuadroClick(event) {
+  const cuadroClicked = event.target;
+  console.log(cuadroClicked.style.backgroundColor)
+}
 
+function obtenerColorRandom() {
+  const red = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  return `${red},${green},${blue}`;
+}
 
-createJuego()
+createJuego();
