@@ -40,7 +40,6 @@ function addCuadros() {
     JUEGO_DIV.appendChild(cuadro);
     puntoDiv.innerText = `Punto(s): ${nivel}`;
     contadorDiv.innerText = `contador: ${contadorNumber}`;
-    initContador();
   }
 }
 
@@ -61,7 +60,10 @@ function subirNivel() {
 }
 
 function onCuadroClick(event) {
-  if (isFirstClick) backgroundSound.play();
+  if (isFirstClick) {
+    backgroundSound.play();
+    initContador();
+  }
   isFirstClick = false;
   boingSound.currentTime = 0;
   boingSound.play();
