@@ -5,7 +5,12 @@
 }
 h1{
     font-size: 100px;
-color: aquamarine;
+    color: black;
+}
+
+h2{
+    font-size: 70px;
+    color: black ;
 }
 
 :root {
@@ -16,7 +21,7 @@ color: aquamarine;
 }
 
 body {
-    background: darkblue;
+    background: white;
     width: 100%;
     height: 100vh;
     display: grid;
@@ -24,12 +29,12 @@ body {
     
 }
 
-.juego {
+.contenedor_juego {
     position: relative;
     display: grid;
     width: var(--ancho-juego);
+    border: 2px solid black;
     height: var(--altura-juego);
-    border: 1px solid white;
     padding: 1px;
 }
 
@@ -37,8 +42,7 @@ body {
     /* background: red; */
     /* width: calc(var(--ancho-cuadro) - 4px); */
     /* height: calc(var(--altura-cuadro) - 4px); */
-    border: 2px solid white;
-     border-radius: 5% ;
+    border: 2px solid black;
 }
 
 .active {
