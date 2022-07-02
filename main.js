@@ -40,6 +40,7 @@ function addCuadros() {
     JUEGO_DIV.appendChild(cuadro);
     puntoDiv.innerText = `Punto(s): ${nivel}`;
     contadorDiv.innerText = `contador: ${contadorNumber}`;
+    contadorNumber = 3;
   }
 }
 
