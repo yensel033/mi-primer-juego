@@ -5,12 +5,12 @@
 }
 h1{
     font-size: 100px;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 h2{
     font-size: 70px;
-    color: black ;
+    color: rgb(255, 255, 255) ;
 }
 
 :root {
@@ -21,7 +21,8 @@ h2{
 }
 
 body {
-    background: white;
+    background-image: url(/descarga.jpg) ;
+    background-size: cover;
     width: 100%;
     height: 100vh;
     display: grid;
