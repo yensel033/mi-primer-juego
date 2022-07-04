@@ -11,7 +11,7 @@ backgroundSound.loop = true;
 let isFirstClick = true;
 
 document.body.appendChild(JUEGO_DIV);
-let nivel = 1;
+let nivel = 2;
 
 function createJuego() {
   addCuadros();
@@ -19,7 +19,7 @@ function createJuego() {
 
 function addCuadros() {
   JUEGO_DIV.innerHTML = "";
-  const numeroDeCuadro = nivel == 1 ? 2 : nivel * nivel;
+  const numeroDeCuadro = nivel == 2 ? 4 : nivel * nivel;
   const numeroAleatorio = Math.floor(Math.random() * numeroDeCuadro); // numero random de 0 al 2 (aunque nunca va a llegar al dos, se queda en 1.99)
   const randomColor = obtenerColorRandom();
 
@@ -34,7 +34,7 @@ function addCuadros() {
 
     if (index === numeroAleatorio) {
       cuadro.classList.add("unico");
-      cuadro.style.backgroundColor = `rgba(${randomColor},0.80)`;
+      cuadro.style.backgroundColor = `rgba(${randomColor},.50)`;
     }
 
     JUEGO_DIV.appendChild(cuadro);

@@ -1,28 +1,35 @@
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
 h1{
-    font-size: 100px;
+    font-size: 50px;
     color: rgb(255, 255, 255);
 }
 
+.container{
+    height: 150px;
+    width: 600px;
+    border: solid 10px rgba(183, 255, 0, 0.779);
+    background-color:rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+}
+
 h2{
-    font-size: 70px;
+    font-size: 30px;
     color: rgb(255, 255, 255) ;
 }
 
 :root {
-    --ancho-juego: 600px;
-    --altura-juego: 600px;
+    --ancho-juego: 800px;
+    --altura-juego: 500px;
     --ancho-cuadro: calc(var(--ancho-juego) / 2);
     --altura-cuadro: calc(var(--altura-juego) / 2);
 }
 
 body {
-    background-image: url(/descarga.jpg) ;
-    background-size: cover;
+    background-color: blue;
     width: 100%;
     height: 100vh;
     display: grid;
@@ -34,9 +41,10 @@ body {
     position: relative;
     display: grid;
     width: var(--ancho-juego);
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     height: var(--altura-juego);
     padding: 1px;
+    
 }
 
 .cuadro {
@@ -44,6 +52,7 @@ body {
     /* width: calc(var(--ancho-cuadro) - 4px); */
     /* height: calc(var(--altura-cuadro) - 4px); */
     border: 2px solid black;
+     border-radius: 10px;
 }
 
 .active {
