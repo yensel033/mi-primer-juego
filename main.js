@@ -49,7 +49,7 @@ function gameOver() {
   gameOverSound.play();
   clearInterval(timer);
   alert("Has perdido");
-  nivel = 1;
+  nivel = 2;
   contadorNumber = 3;
   addCuadros();
   isFirstClick = true;
@@ -72,8 +72,6 @@ function onCuadroClick(event) {
 
   if (cuadroClicked.classList.contains("unico")) {
     subirNivel();
-  } else {
-    gameOver();
   }
 }
 
