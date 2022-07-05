@@ -40,7 +40,7 @@ function addCuadros() {
     JUEGO_DIV.appendChild(cuadro);
     puntoDiv.innerText = `Punto(s): ${nivel}`;
     contadorDiv.innerText = `contador: ${contadorNumber}`;
-    contadorNumber = 3;
+    contadorNumber = 5;
   }
 }
 
@@ -50,7 +50,7 @@ function gameOver() {
   clearInterval(timer);
   alert("Has perdido");
   nivel = 2;
-  contadorNumber = 3;
+  contadorNumber = 5;
   addCuadros();
   isFirstClick = true;
 }
